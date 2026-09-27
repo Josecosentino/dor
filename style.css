@@ -1,0 +1,1010 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@500;600&display=swap');
+
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+:root {
+    --preto: #171511;
+    --marrom: #211e19;
+    --dourado: #b68a4a;
+    --vinho: #6d2d22;
+    --creme: #f1e7d5;
+    --texto: #d6cbb9;
+    --linha: rgba(241, 231, 213, 0.16);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--preto);
+    color: var(--creme);
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(23, 21, 17, 0.97);
+    border-bottom: 1px solid var(--linha);
+}
+
+.nav-container {
+    max-width: 1180px;
+    min-height: 78px;
+    margin: auto;
+    padding: 0 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.logo {
+    font-family: "Oswald", sans-serif;
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--dourado);
+}
+
+.menu {
+    display: flex;
+    gap: 25px;
+}
+
+.menu a {
+    position: relative;
+
+    padding: 28px 0;
+
+    color: #d8cebe;
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    transition: color 0.2s;
+}
+
+.menu a:hover {
+    color: white;
+}
+
+.menu a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 19px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--dourado);
+
+    transition: width 0.2s;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 720px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(23, 21, 17, 0.98) 0%,
+            rgba(23, 21, 17, 0.82) 45%,
+            rgba(23, 21, 17, 0.25) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(23, 21, 17, 0.85),
+            transparent
+        );
+
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(109, 45, 34, 0.7),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #171511,
+            #2b251d
+        );
+
+    z-index: -1;
+}
+
+.hero::after {
+    content: "SERRA & SOM";
+
+    position: absolute;
+    right: -100px;
+    bottom: -50px;
+
+    color: rgba(241, 231, 213, 0.035);
+
+    font-family: "Oswald", sans-serif;
+    font-size: 180px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.hero-content {
+    width: 1180px;
+    margin: auto;
+    padding: 80px 24px;
+}
+
+.eyebrow {
+    margin-bottom: 15px;
+
+    color: var(--dourado);
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.hero h1 {
+    margin-bottom: 25px;
+
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(75px, 11vw, 150px);
+    font-weight: 600;
+    line-height: 0.83;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero h1 span {
+    color: var(--dourado);
+}
+
+.hero-text {
+    max-width: 620px;
+
+    margin-bottom: 30px;
+
+    color: var(--texto);
+
+    font-size: 18px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+
+    margin-bottom: 50px;
+}
+
+.button,
+.button-outline {
+    display: inline-block;
+
+    padding: 13px 23px;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.button {
+    border: 1px solid var(--dourado);
+    background: var(--dourado);
+    color: var(--preto);
+}
+
+.button:hover {
+    background: #d1a967;
+}
+
+.button-outline {
+    border: 1px solid var(--dourado);
+}
+
+.button-outline:hover {
+    background: var(--dourado);
+    color: var(--preto);
+}
+
+.hero-info {
+    display: flex;
+    gap: 45px;
+
+    border-top: 1px solid var(--linha);
+
+    padding-top: 25px;
+}
+
+.hero-info div {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-info strong {
+    font-family: "Oswald", sans-serif;
+    font-size: 30px;
+}
+
+.hero-info span {
+    color: var(--texto);
+
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   FAIXA
+========================= */
+
+.intro-strip {
+    border-top: 1px solid var(--linha);
+    border-bottom: 1px solid var(--linha);
+
+    padding: 25px max(24px, calc((100% - 1180px) / 2));
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.intro-strip span {
+    font-family: "Oswald", sans-serif;
+    font-size: 23px;
+    text-transform: uppercase;
+}
+
+.intro-strip a {
+    color: var(--dourado);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.section {
+    max-width: 1180px;
+
+    margin: auto;
+
+    padding: 90px 24px;
+}
+
+.dark-section {
+    max-width: none;
+
+    padding-left: max(24px, calc((100% - 1132px) / 2));
+    padding-right: max(24px, calc((100% - 1132px) / 2));
+
+    background: var(--marrom);
+}
+
+.section-title {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 45px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid var(--linha);
+}
+
+.section-title h2 {
+    font-family: "Oswald", sans-serif;
+    font-size: 52px;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.section-title > p {
+    max-width: 480px;
+
+    color: var(--texto);
+}
+
+
+/* =========================
+   DESTAQUES DOS ARTISTAS
+========================= */
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.featured-card {
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+    border-top: 2px solid var(--dourado);
+    background: #211e19;
+}
+
+.featured-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    display: block;
+
+    filter: brightness(0.75);
+
+    transition: transform 0.5s ease,
+                filter 0.5s ease;
+}
+
+.featured-card:hover img {
+    transform: scale(1.04);
+    filter: brightness(0.9);
+}
+
+.featured-info {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 80px 25px 25px;
+
+    background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.9)
+    );
+}
+
+.featured-info span {
+    color: var(--dourado);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.featured-info h3 {
+    margin-top: 7px;
+
+    color: white;
+
+    font-family: "Oswald", sans-serif;
+    font-size: 31px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   LINE-UP
+========================= */
+
+.day {
+    margin-bottom: 60px;
+}
+
+.day-header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid var(--linha);
+}
+
+.day-header span {
+    color: var(--dourado);
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.day-header h3 {
+    margin-top: 5px;
+
+    font-family: "Oswald", sans-serif;
+    font-size: 30px;
+}
+
+.day-header p {
+    color: #9d9282;
+
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.artist {
+    min-height: 100px;
+
+    display: grid;
+
+    grid-template-columns: 80px 1fr 100px;
+
+    align-items: center;
+
+    border-bottom: 1px solid var(--linha);
+
+    transition: background 0.2s;
+}
+
+.artist:hover {
+    background: rgba(182, 138, 74, 0.06);
+}
+
+.artist-number {
+    color: var(--dourado);
+
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+}
+
+.artist-name h3 {
+    font-family: "Oswald", sans-serif;
+    font-size: 28px;
+    text-transform: uppercase;
+}
+
+.artist-name p {
+    color: #9d9282;
+
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.artist-time {
+    color: var(--creme);
+
+    font-family: "Oswald", sans-serif;
+    font-size: 27px;
+
+    text-align: right;
+}
+
+
+/* =========================
+   INGRESSOS
+========================= */
+
+.tickets {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.ticket {
+    min-height: 400px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 32px;
+
+    border: 1px solid var(--linha);
+
+    background: var(--marrom);
+}
+
+.ticket.highlighted {
+    border-color: var(--dourado);
+}
+
+.ticket-label {
+    color: var(--dourado);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.ticket h3 {
+    margin-top: 12px;
+
+    font-family: "Oswald", sans-serif;
+    font-size: 35px;
+}
+
+.price {
+    margin: 15px 0 25px;
+
+    font-family: "Oswald", sans-serif;
+    font-size: 48px;
+}
+
+.ticket ul {
+    flex: 1;
+
+    color: var(--texto);
+}
+
+.ticket li {
+    margin: 9px 0;
+}
+
+.ticket-button {
+    display: block;
+
+    margin-top: 25px;
+    padding: 13px;
+
+    border: 1px solid var(--dourado);
+
+    color: var(--creme);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.ticket-button:hover {
+    background: var(--dourado);
+    color: var(--preto);
+}
+
+.small-note {
+    margin-top: 20px;
+
+    color: #8f8576;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   INFORMAÇÕES
+========================= */
+
+.information-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+}
+
+.information-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-item {
+    display: grid;
+
+    grid-template-columns: 45px 1fr;
+
+    gap: 20px;
+
+    padding: 25px 0;
+
+    border-bottom: 1px solid var(--linha);
+}
+
+.info-item > span {
+    color: var(--dourado);
+
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+}
+
+.info-item h3 {
+    margin-bottom: 8px;
+
+    font-family: "Oswald", sans-serif;
+    font-size: 25px;
+}
+
+.info-item p {
+    color: var(--texto);
+}
+
+.info-item small {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #857c6d;
+}
+
+.map {
+    min-height: 500px;
+
+    border: 1px solid var(--linha);
+
+    overflow: hidden;
+}
+
+.map iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+
+    border: 0;
+
+    filter: grayscale(1);
+}
+
+
+/* =========================
+   FAQ
+========================= */
+
+.faq-list {
+    max-width: 900px;
+
+    margin-bottom: 60px;
+}
+
+details {
+    border-bottom: 1px solid var(--linha);
+
+    padding: 23px 0;
+}
+
+summary {
+    cursor: pointer;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    list-style: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: "+";
+
+    float: right;
+
+    color: var(--dourado);
+
+    font-size: 24px;
+    font-weight: 400;
+}
+
+details[open] summary::after {
+    content: "−";
+}
+
+details p {
+    max-width: 750px;
+
+    padding-top: 15px;
+
+    color: var(--texto);
+}
+
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.contact-form {
+    max-width: 900px;
+
+    padding-top: 30px;
+}
+
+.contact-form h3 {
+    margin-bottom: 25px;
+
+    font-family: "Oswald", sans-serif;
+    font-size: 32px;
+}
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+.contact-form > div {
+    margin-bottom: 18px;
+}
+
+.contact-form label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--dourado);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+input,
+textarea {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid var(--linha);
+
+    outline: none;
+
+    background: var(--marrom);
+
+    color: var(--creme);
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--dourado);
+}
+
+textarea {
+    min-height: 150px;
+
+    resize: vertical;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+.footer {
+    border-top: 1px solid var(--linha);
+
+    padding: 35px 24px;
+
+    color: #a99d8b;
+}
+
+.footer-content {
+    max-width: 1180px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+.footer strong {
+    color: var(--creme);
+
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.footer p {
+    font-size: 12px;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 850px) {
+
+    .nav-container {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .menu {
+        width: 100%;
+
+        justify-content: space-between;
+
+        gap: 10px;
+    }
+
+    .menu a {
+        padding: 5px 0;
+
+        font-size: 10px;
+    }
+
+    .menu a::after {
+        display: none;
+    }
+
+    .hero {
+        min-height: 650px;
+    }
+
+    .hero-content {
+        padding-top: 70px;
+    }
+
+    .hero h1 {
+        font-size: 85px;
+    }
+
+    .featured-grid,
+    .tickets,
+    .information-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .intro-strip {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .map {
+        min-height: 350px;
+    }
+
+    .map iframe {
+        min-height: 350px;
+    }
+
+}
+
+
+/* =========================
+   CELULAR PEQUENO
+========================= */
+
+@media (max-width: 550px) {
+
+    .menu {
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        text-align: center;
+    }
+
+    .hero {
+        min-height: 650px;
+    }
+
+    .hero h1 {
+        font-size: 70px;
+    }
+
+    .hero-text {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .hero-info {
+        gap: 20px;
+    }
+
+    .section {
+        padding: 65px 20px;
+    }
+
+    .section-title h2 {
+        font-size: 42px;
+    }
+
+    .artist {
+        grid-template-columns: 45px 1fr 65px;
+    }
+
+    .artist-name h3 {
+        font-size: 21px;
+    }
+
+    .artist-time {
+        font-size: 22px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+}
